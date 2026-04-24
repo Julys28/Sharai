@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JogoCacaPalavra.HomePage"
+             BackgroundColor="#F0F9FF">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" Spacing="20">
+            <Label Text="⭐ Bem-vindo ao Caça-Palavras Kids ⭐" 
+                   FontSize="36" 
+                   FontAttributes="Bold" 
+                   TextColor="#0284C7" 
+                   HorizontalOptions="Center" />
+            <Label Text="Encontra palavras divertidas e aprende enquanto jogas!" 
+                   FontSize="18" 
+                   TextColor="#0369A1" 
+                   HorizontalOptions="Center" />
+
+            <Image Source="dotnet_bot.png" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1" HorizontalOptions="Center">
+            <Button Text="Começar" 
+                    Padding="15" 
+                    BackgroundColor="#0EA5E9" 
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    FontSize="20" 
+                    CornerRadius="12"
+                    Clicked="OnStartClicked" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

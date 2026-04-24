@@ -1,0 +1,210 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
+
+namespace JogoCacaPalavra
+{
+    public partial class MainPage : ContentPage
+    {
+        private const int GridSize = 10;
+        private char[,] gridData = new char[GridSize, GridSize];
+        private List<WordInfo> gameWords = new List<WordInfo>();
+        private Button[,] gridButtons = new Button[GridSize, GridSize];
+        private string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        // UI elements created in code to avoid XAML/WPF mismatches
+        private Grid letterGrid;
+        private ListView wordsListView;
+        private Label winOverlay;
+
+        public MainPage()
+        {
+            // Do not call InitializeComponent here because the original file was WPF-based.
+            BuildUi();
+            StartNewGame();
+        }
+
+        private void BuildUi()
+        {
+            letterGrid = new Grid { RowSpacing = 2, ColumnSpacing = 2, Padding = 4 };
+            for (int i = 0; i < GridSize; i++)
+            {
+                letterGrid.RowDefinitions.Add(new RowDefinition(GridLength.Star));
+                letterGrid.ColumnDefinitions.Add(new ColumnDefinition(GridLength.Star));
+            }
+
+            wordsListView = new ListView
+            {
+                HeightRequest = 200,
+                SelectionMode = ListViewSelectionMode.None,
+            };
+
+            winOverlay = new Label
+            {
+                Text = "Você ganhou!",
+                BackgroundColor = Colors.Black.WithAlpha(0.7f),
+                TextColor = Colors.White,
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Center,
+                FontSize = 24,
+                IsVisible = false
+            };
+
+            var newGameButton = new Button { Text = "Novo Jogo" };
+            newGameButton.Clicked += (s, e) => StartNewGame();
+
+            var mainLayout = new StackLayout { Spacing = 8, Padding = 8 };
+            mainLayout.Children.Add(newGameButton);
+            mainLayout.Children.Add(new ScrollView { Content = letterGrid, HeightRequest = 400 });
+            mainLayout.Children.Add(wordsListView);
+            mainLayout.Children.Add(winOverlay);
+
+            Content = mainLayout;
+        }
+
+        private void StartNewGame()
+        {
+            winOverlay.IsVisible = false;
+            SetupLogic();
+            RenderGrid();
+            UpdateWordsList();
+        }
+
+        private void SetupLogic()
+        {
+            Array.Clear(gridData, 0, gridData.Length);
+            gameWords = new List<WordInfo>
+            {
+                new WordInfo("GATO"), new WordInfo("CÃO"),
+                new WordInfo("PATO"), new WordInfo("LEÃO"),
+                new WordInfo("URSO")
+            };
+
+            var rnd = new Random();
+            int[,] directions = { { 0, 1 }, { 1, 0 }, { 1, 1 } };
+
+            foreach (var word in gameWords)
+            {
+                word.Cells.Clear();
+                bool placed = false;
+                int attempts = 0;
+                while (!placed && attempts < 1000)
+                {
+                    attempts++;
+                    int dir = rnd.Next(3);
+                    int r = rnd.Next(GridSize);
+                    int c = rnd.Next(GridSize);
+
+                    if (CanPlace(word.Text, r, c, directions[dir, 0], directions[dir, 1]))
+                    {
+                        for (int i = 0; i < word.Text.Length; i++)
+                        {
+                            int row = r + i * directions[dir, 0];
+                            int col = c + i * directions[dir, 1];
+                            gridData[row, col] = word.Text[i];
+                            word.Cells.Add((row, col));
+                        }
+                        placed = true;
+                    }
+                }
+            }
+
+            for (int r = 0; r < GridSize; r++)
+            for (int c = 0; c < GridSize; c++)
+                if (gridData[r, c] == '\0')
+                    gridData[r, c] = alphabet[rnd.Next(alphabet.Length)];
+        }
+
+        private bool CanPlace(string word, int r, int c, int dr, int dc)
+        {
+            for (int i = 0; i < word.Length; i++)
+            {
+                int nr = r + i * dr;
+                int nc = c + i * dc;
+                if (nr < 0 || nr >= GridSize || nc < 0 || nc >= GridSize) return false;
+                if (gridData[nr, nc] != '\0' && gridData[nr, nc] != word[i]) return false;
+            }
+            return true;
+        }
+
+        private void RenderGrid()
+        {
+            letterGrid.Children.Clear();
+
+            for (int r = 0; r < GridSize; r++)
+            {
+                for (int c = 0; c < GridSize; c++)
+                {
+                    var btn = new Button
+                    {
+                        Text = gridData[r, c].ToString(),
+                        FontSize = 18,
+                        BackgroundColor = Color.FromArgb("F0F9FF"),
+                        TextColor = Colors.Black,
+                        Padding = 2
+                    };
+                    int rr = r, cc = c;
+                    btn.Clicked += (s, e) => OnLetterClick(rr, cc);
+                    gridButtons[r, c] = btn;
+                    letterGrid.Add(btn, c, r);
+                }
+            }
+        }
+
+        private void OnLetterClick(int row, int col)
+        {
+            foreach (var word in gameWords)
+            {
+                if (!word.IsFound && word.Cells.Any(cell => cell.r == row && cell.c == col))
+                {
+                    MarkWordFound(word);
+                }
+            }
+            CheckWin();
+        }
+
+        private void MarkWordFound(WordInfo word)
+        {
+            word.IsFound = true;
+            foreach (var (r, c) in word.Cells)
+            {
+                var btn = gridButtons[r, c];
+                if (btn != null)
+                {
+                    btn.BackgroundColor = Colors.LightGreen;
+                    btn.TextColor = Colors.White;
+                }
+            }
+            UpdateWordsList();
+        }
+
+        private void UpdateWordsList()
+        {
+            var items = gameWords.Select(w => new { Text = (w.IsFound ? "✓ " : "") + w.Text, Color = w.IsFound ? Colors.Gray : Colors.Black }).ToList();
+            wordsListView.ItemsSource = items;
+            wordsListView.ItemTemplate = new DataTemplate(() =>
+            {
+                var textCell = new TextCell();
+                textCell.SetBinding(TextCell.TextProperty, "Text");
+                textCell.SetBinding(TextCell.TextColorProperty, "Color");
+                return textCell;
+            });
+        }
+
+        private void CheckWin()
+        {
+            if (gameWords.All(w => w.IsFound))
+                winOverlay.IsVisible = true;
+        }
+    }
+
+    public class WordInfo
+    {
+        public string Text { get; set; }
+        public bool IsFound { get; set; }
+        public List<(int r, int c)> Cells { get; set; } = new List<(int, int)>();
+        public WordInfo(string t) => Text = t;
+    }
+}

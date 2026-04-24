@@ -1,0 +1,172 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
+
+namespace JogoCacaPalavra
+{
+    public partial class MainWindow : Window
+    {
+        private const int GridSize = 10;
+        private char[,] gridData = new char[GridSize, GridSize];
+        private List<WordInfo> gameWords = new List<WordInfo>();
+        private List<Button> gridButtons = new List<Button>();
+        private string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        public object FrameworkElement WinOverlay { get; private set; }
+        
+        public MainWindow()
+        {
+            InitializeComponent();
+            StartNewGame();
+        }
+
+        private void StartNewGame()
+        {
+            WinOverlay.Visibility = Visibility.Collapsed;
+            WordGridContainer.Items.Clear(); // Em WPF real usaria um ObservableCollection para os botões
+            SetupLogic();
+            RenderGrid();
+            UpdateWordsList();
+        }
+
+        private void SetupLogic()
+        {
+            // Reset de dados
+            Array.Clear(gridData, 0, gridData.Length);
+            gameWords = new List<WordInfo>
+            {
+                new WordInfo("GATO"), new WordInfo("CÃO"),
+                new WordInfo("PATO"), new WordInfo("LEÃO"),
+                new WordInfo("URSO")
+            };
+
+            Random rnd = new Random();
+            int[,] directions = { { 0, 1 }, { 1, 0 }, { 1, 1 } };
+
+            foreach (var word in gameWords)
+            {
+                bool placed = false;
+                while (!placed)
+                {
+                    int dir = rnd.Next(3);
+                    int r = rnd.Next(GridSize);
+                    int c = rnd.Next(GridSize);
+
+                    if (CanPlace(word.Text, r, c, directions[dir, 0], directions[dir, 1]))
+                    {
+                        for (int i = 0; i < word.Text.Length; i++)
+                        {
+                            int row = r + i * directions[dir, 0];
+                            int col = c + i * directions[dir, 1];
+                            gridData[row, col] = word.Text[i];
+                            word.Cells.Add((row, col));
+                        }
+                        placed = true;
+                    }
+                }
+            }
+
+            // Preencher vazios
+            for (int r = 0; r < GridSize; r++)
+                for (int c = 0; c < GridSize; c++)
+                    if (gridData[r, c] == '\0')
+                        gridData[r, c] = alphabet[rnd.Next(alphabet.Length)];
+        }
+
+        private bool CanPlace(string word, int r, int c, int dr, int dc)
+        {
+            for (int i = 0; i < word.Length; i++)
+            {
+                int nr = r + i * dr;
+                int nc = c + i * dc;
+                if (nr < 0 || nr >= GridSize || nc < 0 || nc >= GridSize ||
+                   (gridData[nr, nc] != '\0' && gridData[nr, nc] != word[i])) return false;
+            }
+            return true;
+        }
+
+        private void RenderGrid()
+        {
+            // Nota: Numa aplicação real, usaríamos Binding, aqui criamos programaticamente para simplicidade
+            gridButtons.Clear();
+            var uniformGrid = (UniformGrid)VisualTreeHelper.GetChild(VisualTreeHelper.GetChild(WordGridContainer, 0), 0);
+            uniformGrid.Children.Clear();
+
+            for (int r = 0; r < GridSize; r++)
+            {
+                for (int c = 0; c < GridSize; c++)
+                {
+                    Button btn = new Button
+                    {
+                        Content = gridData[r, c].ToString(),
+                        FontSize = 20,
+                        FontWeight = FontWeights.Bold,
+                        Margin = new Thickness(2),
+                        Background = new SolidColorBrush(Color.FromRgb(240, 249, 255)),
+                        BorderThickness = new Thickness(0),
+                        Tag = (r, c)
+                    };
+                    btn.Click += OnLetterClick;
+                    uniformGrid.Children.Add(btn);
+                    gridButtons.Add(btn);
+                }
+            }
+        }
+
+        private void OnLetterClick(object sender, RoutedEventArgs e)
+        {
+            Button clicked = (Button)sender;
+            var (row, col) = ((int, int))clicked.Tag;
+
+            // Simulação de seleção: Para crianças, nesta versão consola-para-GUI, 
+            // basta clicar numa letra que pertença a uma palavra para tentar "ativá-la"
+            foreach (var word in gameWords)
+            {
+                if (!word.IsFound && word.Cells.Any(cell => cell.r == row && cell.c == col))
+                {
+                    MarkWordFound(word);
+                }
+            }
+
+            CheckWin();
+        }
+
+        private void MarkWordFound(WordInfo word)
+        {
+            word.IsFound = true;
+            foreach (var (r, c) in word.Cells)
+            {
+                var btn = gridButtons.First(b => ((int, int))b.Tag == (r, c));
+                btn.Background = Brushes.LightGreen;
+                btn.Foreground = Brushes.White;
+            }
+            UpdateWordsList();
+        }
+
+        private void UpdateWordsList()
+        {
+            WordsListContainer.ItemsSource = gameWords.Select(w => new {
+                WordText = w.Text,
+                Decoration = w.IsFound ? TextDecorations.Strikethrough : null,
+                Color = w.IsFound ? Brushes.Gray : Brushes.Black
+            }).ToList();
+        }
+
+        private void CheckWin()
+        {
+            if (gameWords.All(w => w.IsFound))
+                WinOverlay.Visibility = Visibility.Visible;
+        }
+
+        private void OnNewGameClick(object sender, RoutedEventArgs e) => StartNewGame();
+    }
+
+    public class WordInfo
+    {
+        public string Text { get; set; }
+        public bool IsFound { get; set; }
+        public List<(int r, int c)> Cells { get; set; } = new List<(int, int)>();
+        public WordInfo(string t) => Text = t;
+    }
+}

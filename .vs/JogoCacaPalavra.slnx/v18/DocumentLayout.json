@@ -1,0 +1,93 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\APP\\JogoCacaPalavra\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|c:\\app\\jogocacapalavra\\jogocacapalavra\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|c:\\app\\jogocacapalavra\\jogocacapalavra\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|c:\\app\\jogocacapalavra\\jogocacapalavra\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|c:\\app\\jogocacapalavra\\jogocacapalavra\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomePage.xaml",
+              "DocumentMoniker": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\HomePage.xaml",
+              "RelativeDocumentMoniker": "JogoCacaPalavra\\HomePage.xaml",
+              "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\HomePage.xaml",
+              "RelativeToolTip": "JogoCacaPalavra\\HomePage.xaml",
+              "ViewState": "AgIAAI0AAAAAAAAAAABBwI4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-24T13:29:38.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\AppShell.xaml",
+              "RelativeDocumentMoniker": "JogoCacaPalavra\\AppShell.xaml",
+              "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\AppShell.xaml",
+              "RelativeToolTip": "JogoCacaPalavra\\AppShell.xaml",
+              "ViewState": "AgIAABAAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-24T13:29:28.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "JogoCacaPalavra\\MainPage.xaml.cs",
+              "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\MainPage.xaml.cs",
+              "RelativeToolTip": "JogoCacaPalavra\\MainPage.xaml.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAADwv7EAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T12:07:00.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\MainPage.xaml",
+              "RelativeDocumentMoniker": "JogoCacaPalavra\\MainPage.xaml",
+              "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\MainPage.xaml",
+              "RelativeToolTip": "JogoCacaPalavra\\MainPage.xaml",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-24T12:06:21.967Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

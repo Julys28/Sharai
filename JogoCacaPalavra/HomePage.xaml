@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JogoCacaPalavra.HomePage"
+             BackgroundColor="#F0F9FF">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <VerticalStackLayout Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Margin="0,0,0,10">
+            <Label Text="⭐ Caça-Palavras Kids ⭐" 
+                   FontSize="34" 
+                   FontAttributes="Bold" 
+                   TextColor="#0284C7" 
+                   HorizontalOptions="Center" />
+            <Label Text="Encontra as palavras na grelha. Pronto para começar?" 
+                   FontSize="14" 
+                   TextColor="#0369A1" 
+                   HorizontalOptions="Center" />
+        </VerticalStackLayout>
+
+        <!-- Preview Grid -->
+        <Border Grid.Row="1" Grid.Column="0" BackgroundColor="White" Padding="12" Stroke="#BAE6FD" StrokeThickness="2">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12" />
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Label Text="Pré-visualização da grelha" FontAttributes="Bold" TextColor="#0369A1" HorizontalOptions="Center" />
+                <Grid RowSpacing="4" ColumnSpacing="4">
+                    <!-- Simple 6x6 preview; letters são fixas apenas para estética -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                        <RowDefinition Height="36" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="36" />
+                        <ColumnDefinition Width="36" />
+                        <ColumnDefinition Width="36" />
+                        <ColumnDefinition Width="36" />
+                        <ColumnDefinition Width="36" />
+                        <ColumnDefinition Width="36" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Hard-coded letters for preview -->
+                    <Button Text="C" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" />
+                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Column="1" />
+                    <Button Text="Ç" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Column="2" />
+                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Column="3" />
+                    <Button Text="P" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Column="4" />
+                    <Button Text="S" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Column="5" />
+
+                    <Button Text="L" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="1" />
+                    <Button Text="E" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="1" Grid.Column="1" />
+                    <Button Text="Ã" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="1" Grid.Column="2" />
+                    <Button Text="O" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="1" Grid.Column="3" />
+                    <Button Text="S" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="1" Grid.Column="4" />
+                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="1" Grid.Column="5" />
+
+                    <!-- remaining rows as neutral letters -->
+                    <Button Text="X" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="2" />
+                    <Button Text="Y" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="2" Grid.Column="1" />
+                    <Button Text="Z" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="2" Grid.Column="2" />
+                    <Button Text="G" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="2" Grid.Column="3" />
+                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="2" Grid.Column="4" />
+                    <Button Text="T" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="2" Grid.Column="5" />
+
+                    <Button Text="R" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="3" />
+                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="3" Grid.Column="1" />
+                    <Button Text="P" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="3" Grid.Column="2" />
+                    <Button Text="O" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="3" Grid.Column="3" />
+                    <Button Text="S" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="3" Grid.Column="4" />
+                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="3" Grid.Column="5" />
+
+                    <Button Text="M" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="4" />
+                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="4" Grid.Column="1" />
+                    <Button Text="C" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="4" Grid.Column="2" />
+                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="4" Grid.Column="3" />
+                    <Button Text="C" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="4" Grid.Column="4" />
+                    <Button Text="O" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="4" Grid.Column="5" />
+
+                    <Button Text="B" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="5" />
+                    <Button Text="O" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="5" Grid.Column="1" />
+                    <Button Text="T" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="5" Grid.Column="2" />
+                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="5" Grid.Column="3" />
+                    <Button Text="S" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="5" Grid.Column="4" />
+                    <Button Text="!" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="5" Grid.Column="5" />
+
+                </Grid>
+            </VerticalStackLayout>
+        </Border>
+
+        <!-- Right panel with sample words and start button -->
+        <VerticalStackLayout Grid.Row="1" Grid.Column="1" Margin="16,0,0,0" Spacing="12">
+            <Border BackgroundColor="White" Padding="12" Stroke="#BAE6FD" StrokeThickness="2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+                <VerticalStackLayout>
+                    <Label Text="Palavras a encontrar" FontSize="18" FontAttributes="Bold" TextColor="#0369A1" />
+                    <Label Text="GATO" FontSize="16" TextColor="#1E293B" />
+                    <Label Text="PATO" FontSize="16" TextColor="#1E293B" />
+                    <Label Text="LEÃO" FontSize="16" TextColor="#1E293B" />
+                    <Label Text="RAPOSA" FontSize="16" TextColor="#1E293B" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Começar" 
+                    Padding="14" 
+                    BackgroundColor="#0EA5E9" 
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    FontSize="20" 
+                    CornerRadius="12"
+                    Clicked="OnStartClicked" />
+
+            <Button Text="Configurações" 
+                    Padding="10" 
+                    BackgroundColor="#F8FAFC" 
+                    TextColor="#0369A1" 
+                    FontSize="16" 
+                    CornerRadius="10" />
+        </VerticalStackLayout>
+
+        <!-- Footer -->
+        <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Dica: clica nas letras para selecionar palavras na grelha!" 
+               HorizontalOptions="Center" TextColor="#475569" FontSize="13" Margin="0,12,0,0" />
+
+    </Grid>
+</ContentPage>
