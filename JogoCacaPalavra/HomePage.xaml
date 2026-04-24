@@ -28,77 +28,14 @@
                    HorizontalOptions="Center" />
         </VerticalStackLayout>
 
-        <!-- Preview Grid -->
-        <Border Grid.Row="1" Grid.Column="0" BackgroundColor="White" Padding="12" Stroke="#BAE6FD" StrokeThickness="2">
+        <!-- Espaço informativo no lugar da pré-visualização -->
+        <Border Grid.Row="1" Grid.Column="0" BackgroundColor="White" Padding="20" Stroke="#BAE6FD" StrokeThickness="2">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="12" />
             </Border.StrokeShape>
-            <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Label Text="Pré-visualização da grelha" FontAttributes="Bold" TextColor="#0369A1" HorizontalOptions="Center" />
-                <Grid RowSpacing="4" ColumnSpacing="4">
-                    <!-- Simple 6x6 preview; letters são fixas apenas para estética -->
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="36" />
-                        <RowDefinition Height="36" />
-                        <RowDefinition Height="36" />
-                        <RowDefinition Height="36" />
-                        <RowDefinition Height="36" />
-                        <RowDefinition Height="36" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="36" />
-                        <ColumnDefinition Width="36" />
-                        <ColumnDefinition Width="36" />
-                        <ColumnDefinition Width="36" />
-                        <ColumnDefinition Width="36" />
-                        <ColumnDefinition Width="36" />
-                    </Grid.ColumnDefinitions>
-
-                    <!-- Hard-coded letters for preview -->
-                    <Button Text="C" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" />
-                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Column="1" />
-                    <Button Text="Ç" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Column="2" />
-                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Column="3" />
-                    <Button Text="P" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Column="4" />
-                    <Button Text="S" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Column="5" />
-
-                    <Button Text="L" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="1" />
-                    <Button Text="E" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="1" Grid.Column="1" />
-                    <Button Text="Ã" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="1" Grid.Column="2" />
-                    <Button Text="O" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="1" Grid.Column="3" />
-                    <Button Text="S" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="1" Grid.Column="4" />
-                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="1" Grid.Column="5" />
-
-                    <!-- remaining rows as neutral letters -->
-                    <Button Text="X" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="2" />
-                    <Button Text="Y" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="2" Grid.Column="1" />
-                    <Button Text="Z" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="2" Grid.Column="2" />
-                    <Button Text="G" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="2" Grid.Column="3" />
-                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="2" Grid.Column="4" />
-                    <Button Text="T" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="2" Grid.Column="5" />
-
-                    <Button Text="R" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="3" />
-                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="3" Grid.Column="1" />
-                    <Button Text="P" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="3" Grid.Column="2" />
-                    <Button Text="O" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="3" Grid.Column="3" />
-                    <Button Text="S" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="3" Grid.Column="4" />
-                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="3" Grid.Column="5" />
-
-                    <Button Text="M" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="4" />
-                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="4" Grid.Column="1" />
-                    <Button Text="C" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="4" Grid.Column="2" />
-                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="4" Grid.Column="3" />
-                    <Button Text="C" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="4" Grid.Column="4" />
-                    <Button Text="O" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="4" Grid.Column="5" />
-
-                    <Button Text="B" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="5" />
-                    <Button Text="O" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="5" Grid.Column="1" />
-                    <Button Text="T" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="5" Grid.Column="2" />
-                    <Button Text="A" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="5" Grid.Column="3" />
-                    <Button Text="S" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="5" Grid.Column="4" />
-                    <Button Text="!" BackgroundColor="#F8FAFC" TextColor="#1E293B" FontSize="14" Grid.Row="5" Grid.Column="5" />
-
-                </Grid>
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="8">
+                <Label Text="Preparado para um novo desafio?" FontSize="20" FontAttributes="Bold" TextColor="#0369A1" HorizontalOptions="Center" />
+                <Label Text="Pressiona 'Jogar' para abrir a grelha e começar a procurar palavras." FontSize="14" TextColor="#475569" HorizontalOptions="Center" />
             </VerticalStackLayout>
         </Border>
 
@@ -117,7 +54,7 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Button Text="Começar" 
+            <Button Text="Jogar" 
                     Padding="14" 
                     BackgroundColor="#0EA5E9" 
                     TextColor="White" 
@@ -125,13 +62,6 @@
                     FontSize="20" 
                     CornerRadius="12"
                     Clicked="OnStartClicked" />
-
-            <Button Text="Configurações" 
-                    Padding="10" 
-                    BackgroundColor="#F8FAFC" 
-                    TextColor="#0369A1" 
-                    FontSize="16" 
-                    CornerRadius="10" />
         </VerticalStackLayout>
 
         <!-- Footer -->
