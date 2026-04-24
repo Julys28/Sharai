@@ -7,16 +7,20 @@
       "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|c:\\app\\jogocacapalavra\\jogocacapalavra\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|c:\\app\\jogocacapalavra\\jogocacapalavra\\homepage.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\homepage.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|c:\\app\\jogocacapalavra\\jogocacapalavra\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|c:\\app\\jogocacapalavra\\jogocacapalavra\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE16A295-6E83-4FC7-A680-01B5BCE4D15E}|Itens de Solu\u00E7\u00E3o{AE16A295-6E83-4FC7-A680-01B5BCE4D15E}|C:\\APP\\JogoCacaPalavra\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{AE16A295-6E83-4FC7-A680-01B5BCE4D15E}|Itens de Solu\u00E7\u00E3o{AE16A295-6E83-4FC7-A680-01B5BCE4D15E}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -37,6 +41,23 @@
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\APP\\JogoCacaPalavra\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\APP\\JogoCacaPalavra\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAAAGQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-24T16:14:38.2Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "HomePage.xaml.cs",
@@ -44,20 +65,20 @@
               "RelativeDocumentMoniker": "JogoCacaPalavra\\HomePage.xaml.cs",
               "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\HomePage.xaml.cs",
               "RelativeToolTip": "JogoCacaPalavra\\HomePage.xaml.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-24T14:46:59.991Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "HomePage.xaml",
               "DocumentMoniker": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\HomePage.xaml",
               "RelativeDocumentMoniker": "JogoCacaPalavra\\HomePage.xaml",
               "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\HomePage.xaml",
               "RelativeToolTip": "JogoCacaPalavra\\HomePage.xaml",
-              "ViewState": "AgIAACcAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAkwDEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-04-24T14:46:59.944Z",
               "EditorCaption": ""
@@ -70,20 +91,20 @@
               "RelativeDocumentMoniker": "JogoCacaPalavra\\MainPage.xaml.cs",
               "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\MainPage.xaml.cs",
               "RelativeToolTip": "JogoCacaPalavra\\MainPage.xaml.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAwwAwAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAlwD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-24T12:07:00.415Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\MainPage.xaml",
               "RelativeDocumentMoniker": "JogoCacaPalavra\\MainPage.xaml",
               "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\MainPage.xaml",
               "RelativeToolTip": "JogoCacaPalavra\\MainPage.xaml",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAHUAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-04-24T12:06:21.967Z",
               "EditorCaption": ""
