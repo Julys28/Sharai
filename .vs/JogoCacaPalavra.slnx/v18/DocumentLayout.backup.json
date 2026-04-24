@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|c:\\app\\jogocacapalavra\\jogocacapalavra\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|c:\\app\\jogocacapalavra\\jogocacapalavra\\homepage.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\homepage.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|c:\\app\\jogocacapalavra\\jogocacapalavra\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|c:\\app\\jogocacapalavra\\jogocacapalavra\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D5D680-73FF-C104-6EA3-ECD4BA5A58AE}|JogoCacaPalavra\\JogoCacaPalavra.csproj|solutionrelative:jogocacapalavra\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,31 +26,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "HomePage.xaml.cs",
+              "DocumentMoniker": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\HomePage.xaml.cs",
+              "RelativeDocumentMoniker": "JogoCacaPalavra\\HomePage.xaml.cs",
+              "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\HomePage.xaml.cs",
+              "RelativeToolTip": "JogoCacaPalavra\\HomePage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T14:46:59.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "HomePage.xaml",
               "DocumentMoniker": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\HomePage.xaml",
               "RelativeDocumentMoniker": "JogoCacaPalavra\\HomePage.xaml",
               "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\HomePage.xaml",
               "RelativeToolTip": "JogoCacaPalavra\\HomePage.xaml",
-              "ViewState": "AgIAAI0AAAAAAAAAAABBwI4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-24T13:29:38.211Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\AppShell.xaml",
-              "RelativeDocumentMoniker": "JogoCacaPalavra\\AppShell.xaml",
-              "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\AppShell.xaml",
-              "RelativeToolTip": "JogoCacaPalavra\\AppShell.xaml",
-              "ViewState": "AgIAABAAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-24T13:29:28.173Z"
+              "WhenOpened": "2026-04-24T14:46:59.944Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -60,7 +70,7 @@
               "RelativeDocumentMoniker": "JogoCacaPalavra\\MainPage.xaml.cs",
               "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\MainPage.xaml.cs",
               "RelativeToolTip": "JogoCacaPalavra\\MainPage.xaml.cs",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAIwLMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAwwAwAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-24T12:07:00.415Z",
               "EditorCaption": ""
@@ -73,26 +83,10 @@
               "RelativeDocumentMoniker": "JogoCacaPalavra\\MainPage.xaml",
               "ToolTip": "C:\\APP\\JogoCacaPalavra\\JogoCacaPalavra\\MainPage.xaml",
               "RelativeToolTip": "JogoCacaPalavra\\MainPage.xaml",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-04-24T12:06:21.967Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

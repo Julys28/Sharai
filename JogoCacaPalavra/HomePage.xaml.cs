@@ -11,8 +11,7 @@ namespace JogoCacaPalavra
 
         private async void OnStartClicked(object sender, System.EventArgs e)
         {
-            // Navigate to the existing MainPage (game)
-            await Shell.Current.GoToAsync("/MainPage");
+            await Shell.Current.GoToAsync("//MainPage");
         }
     }
 }

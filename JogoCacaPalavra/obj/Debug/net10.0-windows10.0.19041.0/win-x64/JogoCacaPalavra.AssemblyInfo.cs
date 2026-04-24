@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JogoCacaPalavra")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+5e339fd9dcb8e83ace6e4db630b9fd35326dc900")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+5bfcfe6b9e428f77342a6aec532719203694a43c")]
 [assembly: System.Reflection.AssemblyProductAttribute("JogoCacaPalavra")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JogoCacaPalavra")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
