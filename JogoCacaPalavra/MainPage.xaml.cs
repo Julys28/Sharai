@@ -9,33 +9,32 @@ namespace JogoCacaPalavra
     public partial class MainPage : ContentPage
     {
         private const int GridSize = 10;
-        private char[,] gridData = new char[GridSize, GridSize];
+        private readonly char[,] gridData = new char[GridSize, GridSize];
         private List<WordInfo> gameWords = new List<WordInfo>();
-        private Button[,] gridButtons = new Button[GridSize, GridSize];
-        private string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        private readonly Button[,] gridButtons = new Button[GridSize, GridSize];
+        private const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         private static readonly string[] WordPool = new[]
         {
             "GATO","CÃO","PATO","LEÃO","URSO","PEIXE","COELHO","TIGRE","ELEFANTE","RAPOSA",
-            "CAVALO","VACA","GALINHA","ABELHA","BORBOLETA","MACACO","RATO","OVELHA","SERPENTE","CORUJA"
+            "CAVALO","VACA","PAPAGAIO", "LOBO","GALINHA","ABELHA","BORBOLETA","MACACO","RATO","OVELHA","SERPENTE","CORUJA", "CAMELO", "BOI", "CABRITO", "ZEBRA", "GOLFINHO", "ALCE", "BALEIA"
         };
-        private int wordsToPlace = 5;
+        private const int wordsToPlace = 8;
         private List<string> lastSelectedWords = new List<string>();
 
-        // UI elements from XAML
-        private Grid letterGrid;
-        private CollectionView wordsListView;
-        private Border winOverlay;
+        private readonly Grid letterGrid;
+        private readonly CollectionView wordsListView;
+        private readonly Border winOverlay;
+
+        private readonly bool[,] selected = new bool[GridSize, GridSize];
 
         public MainPage()
         {
             InitializeComponent();
 
-            // assign XAML controls to local fields for compatibility with existing logic
             letterGrid = LetterGrid;
             wordsListView = WordsListContainer;
             winOverlay = WinOverlay;
 
-            // ensure grid definitions exist
             if (letterGrid.RowDefinitions.Count == 0 && letterGrid.ColumnDefinitions.Count == 0)
             {
                 for (int i = 0; i < GridSize; i++)
@@ -50,6 +49,7 @@ namespace JogoCacaPalavra
 
         private void StartNewGame()
         {
+            Array.Clear(selected, 0, selected.Length);
             winOverlay.IsVisible = false;
             SetupLogic();
             RenderGrid();
@@ -59,7 +59,6 @@ namespace JogoCacaPalavra
         private void SetupLogic()
         {
             Array.Clear(gridData, 0, gridData.Length);
-            // choose random unique words from the pool, try to avoid repeating the previous set
             var rnd = new Random();
             List<string> selection = null;
             int tries = 0;
@@ -131,10 +130,27 @@ namespace JogoCacaPalavra
                     {
                         Text = gridData[r, c].ToString(),
                         FontSize = 18,
-                        BackgroundColor = Color.FromArgb("#F0F9FF"),
-                        TextColor = Colors.Black,
                         Padding = 2
                     };
+
+                    bool belongsToFoundWord = gameWords.Any(w => w.IsFound && w.Cells.Any(cell => cell.r == r && cell.c == c));
+
+                    if (selected[r, c])
+                    {
+                        btn.BackgroundColor = Colors.LightBlue;
+                        btn.TextColor = Colors.White;
+                    }
+                    else if (belongsToFoundWord)
+                    {
+                        btn.BackgroundColor = Colors.LightGreen;
+                        btn.TextColor = Colors.White;
+                    }
+                    else
+                    {
+                        btn.BackgroundColor = Color.FromArgb("#F0F9FF");
+                        btn.TextColor = Colors.Black;
+                    }
+
                     int rr = r, cc = c;
                     btn.Clicked += (s, e) => OnLetterClick(rr, cc);
                     gridButtons[r, c] = btn;
@@ -145,14 +161,44 @@ namespace JogoCacaPalavra
 
         private void OnLetterClick(int row, int col)
         {
+            selected[row, col] = !selected[row, col];
+
+            var btn = gridButtons[row, col];
+            if (btn != null)
+            {
+                if (selected[row, col])
+                {
+                    btn.BackgroundColor = Colors.LightBlue;
+                    btn.TextColor = Colors.White;
+                }
+                else
+                {
+                    bool belongsToFoundWord = gameWords.Any(w => w.IsFound && w.Cells.Any(cell => cell.r == row && cell.c == col));
+                    if (belongsToFoundWord)
+                    {
+                        btn.BackgroundColor = Colors.LightGreen;
+                        btn.TextColor = Colors.White;
+                    }
+                    else
+                    {
+                        btn.BackgroundColor = Color.FromArgb("#F0F9FF");
+                        btn.TextColor = Colors.Black;
+                    }
+                }
+            }
+
             foreach (var word in gameWords)
             {
-                if (!word.IsFound && word.Cells.Any(cell => cell.r == row && cell.c == col))
+                if (word.IsFound) continue;
+                bool allSelected = word.Cells.All(cell => selected[cell.r, cell.c]);
+                if (allSelected)
                 {
                     MarkWordFound(word);
                 }
             }
+
             CheckWin();
+            UpdateWordsList();
         }
 
         private void MarkWordFound(WordInfo word)
@@ -160,6 +206,7 @@ namespace JogoCacaPalavra
             word.IsFound = true;
             foreach (var (r, c) in word.Cells)
             {
+                selected[r, c] = false; 
                 var btn = gridButtons[r, c];
                 if (btn != null)
                 {
@@ -167,13 +214,6 @@ namespace JogoCacaPalavra
                     btn.TextColor = Colors.White;
                 }
             }
-            UpdateWordsList();
-        }
-
-        private void UpdateWordsList()
-        {
-            var items = gameWords.Select(w => (w.IsFound ? "✓ " : "") + w.Text).ToList();
-            wordsListView.ItemsSource = items;
         }
 
         private void OnNewGameClick(object sender, EventArgs e)
@@ -185,6 +225,12 @@ namespace JogoCacaPalavra
         {
             if (gameWords.All(w => w.IsFound))
                 winOverlay.IsVisible = true;
+        }
+
+        private void UpdateWordsList()
+        {
+            var items = gameWords.Select(w => (w.IsFound ? "✓ " : "") + w.Text).ToList();
+            wordsListView.ItemsSource = items;
         }
     }
 

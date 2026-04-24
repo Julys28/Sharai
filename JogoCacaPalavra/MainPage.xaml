@@ -14,20 +14,18 @@
             <ColumnDefinition Width="250" />
         </Grid.ColumnDefinitions>
 
-        <!-- Cabeçalho -->
         <VerticalStackLayout Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Margin="0,0,0,20">
-            <Label Text="⭐ Caça-Palavras Kids ⭐" 
+            <Label Text="⭐ Caça-Palavras Sharai ⭐" 
                    FontSize="36" 
                    FontAttributes="Bold" 
                    TextColor="#0284C7" 
                    HorizontalOptions="Center" />
-            <Label Text="Encontra as palavras escondidas na grelha!" 
+            <Label Text="Encontre as palavras escondidas!" 
                    FontSize="16" 
                    TextColor="#0369A1" 
                    HorizontalOptions="Center" />
         </VerticalStackLayout>
 
-        <!-- Área da Grelha do Jogo -->
         <Border Grid.Row="1" Grid.Column="0" 
                 BackgroundColor="White" 
                 Padding="10" 
@@ -37,7 +35,6 @@
                 <RoundRectangle CornerRadius="15" />
             </Border.StrokeShape>
             <ScrollView>
-                <!-- O C# irá preencher este Grid com botões -->
                 <Grid x:Name="LetterGrid" 
                       RowSpacing="2" 
                       ColumnSpacing="2" 
@@ -47,7 +44,6 @@
             </ScrollView>
         </Border>
 
-        <!-- Painel Lateral -->
         <VerticalStackLayout Grid.Row="1" Grid.Column="1" Margin="20,0,0,0">
             <Border BackgroundColor="White" 
                     Padding="15" 
@@ -97,7 +93,6 @@
                     Clicked="OnNewGameClick" />
         </VerticalStackLayout>
 
-        <!-- Overlay de Vitória -->
         <Border x:Name="WinOverlay" 
                 Grid.RowSpan="2" 
                 Grid.ColumnSpan="2" 
@@ -120,7 +115,7 @@
                            FontAttributes="Bold" 
                            TextColor="#EAB308" 
                            HorizontalOptions="Center" />
-                    <Label Text="Encontraste todas as palavras!" 
+                    <Label Text="Você encontrou todas as palavras!" 
                            FontSize="18" 
                            TextColor="#475569"
                            HorizontalOptions="Center" />

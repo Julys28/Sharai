@@ -15,42 +15,43 @@
             <ColumnDefinition Width="300" />
         </Grid.ColumnDefinitions>
 
-        <!-- Header -->
         <VerticalStackLayout Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Margin="0,0,0,10">
-            <Label Text="⭐ Caça-Palavras Kids ⭐" 
+            <Label Text="⭐ Caça-Palavras Sharai ⭐" 
                    FontSize="34" 
                    FontAttributes="Bold" 
                    TextColor="#0284C7" 
                    HorizontalOptions="Center" />
-            <Label Text="Encontra as palavras na grelha. Pronto para começar?" 
+            <Label Text="Encontre as palavras. Pronto para começar?" 
                    FontSize="14" 
                    TextColor="#0369A1" 
                    HorizontalOptions="Center" />
         </VerticalStackLayout>
 
-        <!-- Espaço informativo no lugar da pré-visualização -->
         <Border Grid.Row="1" Grid.Column="0" BackgroundColor="White" Padding="20" Stroke="#BAE6FD" StrokeThickness="2">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="12" />
             </Border.StrokeShape>
             <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="8">
                 <Label Text="Preparado para um novo desafio?" FontSize="20" FontAttributes="Bold" TextColor="#0369A1" HorizontalOptions="Center" />
-                <Label Text="Pressiona 'Jogar' para abrir a grelha e começar a procurar palavras." FontSize="14" TextColor="#475569" HorizontalOptions="Center" />
+                <Label Text="Pressiona 'Jogar' para iniciar o jogo e começar a procurar palavras." FontSize="14" TextColor="#475569" HorizontalOptions="Center" />
             </VerticalStackLayout>
         </Border>
 
-        <!-- Right panel with sample words and start button -->
         <VerticalStackLayout Grid.Row="1" Grid.Column="1" Margin="16,0,0,0" Spacing="12">
             <Border BackgroundColor="White" Padding="12" Stroke="#BAE6FD" StrokeThickness="2">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="12" />
                 </Border.StrokeShape>
                 <VerticalStackLayout>
-                    <Label Text="Palavras a encontrar" FontSize="18" FontAttributes="Bold" TextColor="#0369A1" />
+                    <Label Text="Palavras para encontrar" FontSize="18" FontAttributes="Bold" TextColor="#0369A1" />
                     <Label Text="GATO" FontSize="16" TextColor="#1E293B" />
                     <Label Text="PATO" FontSize="16" TextColor="#1E293B" />
                     <Label Text="LEÃO" FontSize="16" TextColor="#1E293B" />
                     <Label Text="RAPOSA" FontSize="16" TextColor="#1E293B" />
+                    <Label Text="URSO" FontSize="16" TextColor="#1E293B" />
+                    <Label Text="PAPAGAIO" FontSize="16" TextColor="#1E293B" />
+                    <Label Text="LOBO" FontSize="16" TextColor="#1E293B" />
+                    <Label Text="COELHO" FontSize="16" TextColor="#1E293B" />
                 </VerticalStackLayout>
             </Border>
 
@@ -64,8 +65,7 @@
                     Clicked="OnStartClicked" />
         </VerticalStackLayout>
 
-        <!-- Footer -->
-        <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Dica: clica nas letras para selecionar palavras na grelha!" 
+        <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Dica: Clique nas letras para selecionar palavras!" 
                HorizontalOptions="Center" TextColor="#475569" FontSize="13" Margin="0,12,0,0" />
 
     </Grid>
